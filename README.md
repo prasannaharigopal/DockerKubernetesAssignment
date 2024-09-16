@@ -96,10 +96,7 @@ docker-compose ps
 # Stop the services:
 docker-compose down
 
-# Using Docker Hub
-# To push the image to Docker Hub:
-
-# Tag the image:
+# Using Docker Hub To push the image to Docker Hub: Tag the image:
 docker tag calculator-app <your-dockerhub-username>/calculator-app:latest
 
 # Push the image:
@@ -123,7 +120,8 @@ The database is configured with a named volume to persist data across container 
 
 volumes:
   mysql_data:
-#####################################################################################################################
+  
+
 
 # Kubernetes Application
 
@@ -139,8 +137,7 @@ This project demonstrates how to deploy a Java Spring Boot Calculator applicatio
 ├── deployment.yaml          # Kubernetes deployment configuration
 └── service.yaml             # Kubernetes service configuration
 
-# Steps for Building and Running the Application in Kubernetes
-# Build Docker Image
+# Build Docker Image and Run the Application in Kubernetes 
 Build the Docker image for the Java Spring Boot Calculator application:
 
 docker build -t <your-dockerhub-username>/calculator-app .
@@ -176,7 +173,7 @@ To access the application externally, use the Minikube service IP or expose the 
 # Access the Application
 To test the running application, you can use a curl request:
 
-curl http://<minikube-ip>:<node-port>
+curl http://minikube-ip:node-port
 
 Minikube IP can be fetched using:
 minikube ip
