@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculator-app-deployment-kubernetes-bonus
+spec:
+  replicas: 3  # Number of pods
+  selector:
+    matchLabels:
+      app: calculator-app-kubernetes-bonus
+  template:
+    metadata:
+      labels:
+        app: calculator-app-kubernetes-bonus
+    spec:
+      containers:
+      - name: calculator-app-kubernetes-bonus
+        image: prasannaharigopal/calculator-app-kubernetes-bonus:latest  # Docker image from Docker Hub
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+

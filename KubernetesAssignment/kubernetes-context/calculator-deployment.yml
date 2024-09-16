@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculator-app-deployment-kubernetes
+spec:
+  replicas: 2  # Number of pods
+  selector:
+    matchLabels:
+      app: calculator-app-kubernetes
+  template:
+    metadata:
+      labels:
+        app: calculator-app-kubernetes
+    spec:
+      containers:
+      - name: calculator-app-kubernetes
+        image: prasannaharigopal/calculator-app-kubernetes:latest  # Docker image from Docker Hub
+        ports:
+        - containerPort: 8080
+
