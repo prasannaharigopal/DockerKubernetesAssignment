@@ -1,4 +1,7 @@
-# Docker Assignment: Java Spring Boot Application with Docker
+# Docker & Kubernetes Assignment: Java Spring Boot Application with Docker & Kubernetes 
+
+
+# Docker Application 
 
 This project demonstrates how to Dockerize a Java Spring Boot web application using Docker, Docker Compose, and Docker Hub. It includes both a simple single-container application and a multi-container setup with a MySQL database.
 
@@ -120,8 +123,9 @@ The database is configured with a named volume to persist data across container 
 
 volumes:
   mysql_data:
+#####################################################################################################################
 
-# Kubernetes Assignment: Java Spring Boot Application Deployment
+# Kubernetes Application
 
 This project demonstrates how to deploy a Java Spring Boot Calculator application in Kubernetes using Minikube. The project involves building and pushing a Docker image to Docker Hub, creating Kubernetes deployments, services, scaling replicas, and configuring health checks with liveness and readiness probes.
 
