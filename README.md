@@ -140,16 +140,12 @@ This project demonstrates how to deploy a Java Spring Boot Calculator applicatio
 └── service.yaml             # Kubernetes service configuration
 
 # Steps for Building and Running the Application in Kubernetes
-
 # Build Docker Image
-
 Build the Docker image for the Java Spring Boot Calculator application:
-
 
 docker build -t <your-dockerhub-username>/calculator-app .
 # Push Docker Image to Docker Hub
 Push the Docker image to your Docker Hub repository:
-
 
 docker login
 docker tag calculator-app <your-dockerhub-username>/calculator-app:latest
@@ -157,9 +153,11 @@ docker push <your-dockerhub-username>/calculator-app:latest
 
 # Deploying to Kubernetes with Minikube
 Minikube allows you to run a single-node Kubernetes cluster locally. To start Minikube:
+
 minikube start
 
 You can verify the running Minikube containers using Docker:
+
 docker ps
 
 # Apply Kubernetes Configurations
@@ -195,8 +193,7 @@ Bonus: Health Check with Liveness and Readiness Probes
 The application is enhanced with Kubernetes health checks. Liveness and readiness probes have been added to the deployment configuration to ensure the application is functioning properly.
 
 Liveness and Readiness Probes Example in deployment.yaml
-yaml
-Copy code
+
 livenessProbe:
   httpGet:
     path: /actuator/health
